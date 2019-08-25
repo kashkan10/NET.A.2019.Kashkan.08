@@ -1,0 +1,7 @@
+C:\Users\Tanya\source\repos\BookService\BookService\bin\Debug\BookService.exe.config
+C:\Users\Tanya\source\repos\BookService\BookService\bin\Debug\BookService.exe
+C:\Users\Tanya\source\repos\BookService\BookService\bin\Debug\BookService.pdb
+C:\Users\Tanya\source\repos\BookService\BookService\obj\Debug\BookService.csprojAssemblyReference.cache
+C:\Users\Tanya\source\repos\BookService\BookService\obj\Debug\BookService.csproj.CoreCompileInputs.cache
+C:\Users\Tanya\source\repos\BookService\BookService\obj\Debug\BookService.exe
+C:\Users\Tanya\source\repos\BookService\BookService\obj\Debug\BookService.pdb

@@ -5,3 +5,10 @@ C:\Users\Tanya\source\repos\BookService\BookService\obj\Debug\BookService.csproj
 C:\Users\Tanya\source\repos\BookService\BookService\obj\Debug\BookService.csproj.CoreCompileInputs.cache
 C:\Users\Tanya\source\repos\BookService\BookService\obj\Debug\BookService.exe
 C:\Users\Tanya\source\repos\BookService\BookService\obj\Debug\BookService.pdb
+C:\Users\Tanya\Documents\GitHub\NET.A.2019.Kashkan.08\Day8Tasks\BookService\BookService\bin\Debug\BookService.exe.config
+C:\Users\Tanya\Documents\GitHub\NET.A.2019.Kashkan.08\Day8Tasks\BookService\BookService\bin\Debug\BookService.exe
+C:\Users\Tanya\Documents\GitHub\NET.A.2019.Kashkan.08\Day8Tasks\BookService\BookService\bin\Debug\BookService.pdb
+C:\Users\Tanya\Documents\GitHub\NET.A.2019.Kashkan.08\Day8Tasks\BookService\BookService\obj\Debug\BookService.csprojAssemblyReference.cache
+C:\Users\Tanya\Documents\GitHub\NET.A.2019.Kashkan.08\Day8Tasks\BookService\BookService\obj\Debug\BookService.csproj.CoreCompileInputs.cache
+C:\Users\Tanya\Documents\GitHub\NET.A.2019.Kashkan.08\Day8Tasks\BookService\BookService\obj\Debug\BookService.exe
+C:\Users\Tanya\Documents\GitHub\NET.A.2019.Kashkan.08\Day8Tasks\BookService\BookService\obj\Debug\BookService.pdb

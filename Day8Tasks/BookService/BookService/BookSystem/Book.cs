@@ -12,6 +12,27 @@ namespace BookService.BookSystem
         private int countOfPages;
 
         /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="isbn"></param>
+        /// <param name="title"></param>
+        /// <param name="author"></param>
+        /// <param name="year"></param>
+        /// <param name="publishing"></param>
+        /// <param name="countOfPages"></param>
+        /// <param name="price"></param>
+        public Book(string isbn, string title, string author, int year, string publishing, int countOfPages, double price)
+        {
+            ISBN = isbn;
+            Title = title;
+            Author = author;
+            Year = year;
+            Publishing = publishing;
+            CountOfPages = countOfPages;
+            Price = price;
+        }
+
+        /// <summary>
         /// ISBN property
         /// </summary>
         public string ISBN
@@ -67,7 +88,7 @@ namespace BookService.BookSystem
         {
             get
             {
-                return countOfPages);
+                return countOfPages;
             }
             private set
             {
@@ -84,7 +105,7 @@ namespace BookService.BookSystem
         {
             get
             {
-                return Math.Round(price, 2);
+                return price;
             }
             private set
             {
@@ -92,27 +113,6 @@ namespace BookService.BookSystem
                     throw new Exception("Price cannot be negative");
                 price = value;
             }
-        }
-
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        /// <param name="isbn"></param>
-        /// <param name="title"></param>
-        /// <param name="author"></param>
-        /// <param name="year"></param>
-        /// <param name="publishing"></param>
-        /// <param name="countOfPages"></param>
-        /// <param name="price"></param>
-        public Book(string isbn, string title, string author, int year, string publishing, int countOfPages, int price)
-        {
-            ISBN = isbn;
-            Title = title;
-            Author = author;
-            Year = year;
-            Publishing = publishing;
-            CountOfPages = countOfPages;
-            Price = price;
         }
 
         /// <summary>

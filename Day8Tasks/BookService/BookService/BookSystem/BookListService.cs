@@ -63,8 +63,9 @@ namespace BookService.BookSystem
         /// Delete book from list
         /// </summary>
         /// <param name="book"></param>
-        public void DeleteBook(Book book)
+        public void DeleteBook(string isbn)
         {
+            Book book = list.Find(bk => bk.ISBN == isbn);
             if (!list.Contains(book))
                 throw new Exception("Book is not found");
 

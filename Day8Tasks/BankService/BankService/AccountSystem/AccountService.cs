@@ -36,7 +36,7 @@ namespace BankService.AccountSystem
         {
             if (!accounts.Contains(account))
                 accounts.Add(account);
-            else throw new Exception();
+            else throw new Exception("Account already exists");
         }
 
         /// <summary>
@@ -47,9 +47,8 @@ namespace BankService.AccountSystem
         public void AddSum(int id, int sum)
         {
             Account account = accounts.Find(acc => acc.Id == id);
-            if (accounts.Contains(account))
-                account.AddSum(sum);
-            else throw new Exception();
+            CheckExistOfAcc(account);
+            account.AddSum(sum);
         }
 
         /// <summary>
@@ -60,9 +59,8 @@ namespace BankService.AccountSystem
         public void WithdrawSum(int id, int sum)
         {
             Account account = accounts.Find(acc => acc.Id == id);
-            if (accounts.Contains(account))
-                account.WithdrawSum(sum);
-            else throw new Exception();
+            CheckExistOfAcc(account);
+            account.WithdrawSum(sum);
         }
 
         /// <summary>
@@ -72,9 +70,8 @@ namespace BankService.AccountSystem
         public void CloseAcc(int id)
         {
             Account account = accounts.Find(acc => acc.Id == id);
-            if (accounts.Contains(account))
-                account.Close();
-            else throw new Exception();
+            CheckExistOfAcc(account);
+            account.Close();
         }
 
         /// <summary>
@@ -104,6 +101,15 @@ namespace BankService.AccountSystem
         public void LoadFromStorage(IStorage storage)
         {
             storage.Read(accounts);
+        }
+
+        /// <summary>
+        /// Check for account existence
+        /// </summary>
+        private void CheckExistOfAcc(Account account)
+        {
+            if (!accounts.Contains(account))
+                throw new Exception("Account not found");
         }
     }
 }

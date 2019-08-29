@@ -4,3 +4,9 @@ C:\Users\Tanya\source\repos\BankService\BankService\bin\Debug\BankService.pdb
 C:\Users\Tanya\source\repos\BankService\BankService\obj\Debug\BankService.csproj.CoreCompileInputs.cache
 C:\Users\Tanya\source\repos\BankService\BankService\obj\Debug\BankService.exe
 C:\Users\Tanya\source\repos\BankService\BankService\obj\Debug\BankService.pdb
+C:\Users\Tanya\Documents\GitHub\NET.A.2019.Kashkan.08\Day8Tasks\BankService\BankService\bin\Debug\BankService.exe.config
+C:\Users\Tanya\Documents\GitHub\NET.A.2019.Kashkan.08\Day8Tasks\BankService\BankService\bin\Debug\BankService.exe
+C:\Users\Tanya\Documents\GitHub\NET.A.2019.Kashkan.08\Day8Tasks\BankService\BankService\bin\Debug\BankService.pdb
+C:\Users\Tanya\Documents\GitHub\NET.A.2019.Kashkan.08\Day8Tasks\BankService\BankService\obj\Debug\BankService.csproj.CoreCompileInputs.cache
+C:\Users\Tanya\Documents\GitHub\NET.A.2019.Kashkan.08\Day8Tasks\BankService\BankService\obj\Debug\BankService.exe
+C:\Users\Tanya\Documents\GitHub\NET.A.2019.Kashkan.08\Day8Tasks\BankService\BankService\obj\Debug\BankService.pdb

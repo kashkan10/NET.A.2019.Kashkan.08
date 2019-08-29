@@ -61,13 +61,13 @@ namespace BookService.Storage
                 {
                     string isbn = reader.ReadString();
                     string author = reader.ReadString();
-                    string name = reader.ReadString();
+                    string title = reader.ReadString();
                     int year = reader.ReadInt32();
                     string publishing = reader.ReadString();
                     int countOfPages = reader.ReadInt32();
-                    int price = reader.ReadInt32();
+                    double price = reader.ReadDouble();
 
-                    list.Add(new Book(isbn, name, author, year, publishing, countOfPages, price));
+                    list.Add(new Book(isbn, title, author, year, publishing, countOfPages, price));
                 }
             }
         }

@@ -2,20 +2,20 @@
 
 namespace BookService.Predicate
 {
-    class NameTag : IPredicate
+    class TitleTag : IPredicate
     {
         /// <summary>
         /// name
         /// </summary>
-        string name;
+        string title;
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="name"></param>
-        public NameTag(string name)
+        public TitleTag(string title)
         {
-            this.name = name;
+            this.title = title;
         }
 
         /// <summary>
@@ -25,7 +25,7 @@ namespace BookService.Predicate
         /// <returns>Result of check</returns>
         public bool IsMatch(Book book)
         {
-            return book.Title == name;
+            return book.Title == title;
         }
     }
     class YearTag : IPredicate

@@ -4,45 +4,8 @@ namespace BankService.AccountSystem
 {
     class Account
     {
-        /// <summary>
-        /// Id property
-        /// </summary>
-        public int Id { get; private set; }
-
-        /// <summary>
-        /// Name property
-        /// </summary>
-        public string Name { get; private set; }
-
-        /// <summary>
-        /// LastName property
-        /// </summary>
-        public string LastName { get; private set; }
-
-        /// <summary>
-        /// Balance property
-        /// </summary>
-        public int Balance { get; private set; }
-
-        /// <summary>
-        /// Bonus property
-        /// </summary>
-        public double Bonus { get; private set; }
-
-        /// <summary>
-        /// Status property
-        /// </summary>
-        public Status Status { get; private set; }
-
-        /// <summary>
-        /// Type property
-        /// </summary>
-        public CardType Type { get; private set; }
-
-        /// <summary>
-        /// IsActive property
-        /// </summary>
-        bool IsActive { get { if (Status == Status.Active) return true; else return false; } }
+        private int id;
+        private int balance;
 
         /// <summary>
         /// Constructor
@@ -84,16 +47,84 @@ namespace BankService.AccountSystem
         }
 
         /// <summary>
+        /// Id property
+        /// </summary>
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+            private set
+            {
+                if (value < 0)
+                    throw new Exception("Id cannot be negative");
+                id = value;
+            }
+        }
+
+        /// <summary>
+        /// Name property
+        /// </summary>
+        public string Name { get; private set; }
+
+        /// <summary>
+        /// LastName property
+        /// </summary>
+        public string LastName { get; private set; }
+
+        /// <summary>
+        /// Balance property
+        /// </summary>
+        public int Balance
+        {
+            get
+            {
+                return balance;
+            }
+            private set
+            {
+                if (value < 0)
+                    throw new Exception("Balance cannot be negative");
+                balance = value;
+            }
+        }
+
+        /// <summary>
+        /// Bonus property
+        /// </summary>
+        public double Bonus { get; private set; }
+
+        /// <summary>
+        /// Status property
+        /// </summary>
+        public Status Status { get; private set; }
+
+        /// <summary>
+        /// Type property
+        /// </summary>
+        public CardType Type { get; private set; }
+
+        /// <summary>
+        /// IsActive property
+        /// </summary>
+        bool IsActive { get { if (Status == Status.Active) return true; else return false; } }
+
+        /// <summary>
         /// Add sum to account
         /// </summary>
         /// <param name="sum"></param>
         public void AddSum(int sum)
         {
+            if (sum < 0)
+                throw new ArgumentException("Sum cannot be negative");
+
             if (IsActive)
             {
                 Balance += sum;
                 BonusLogic.Add(sum, Type);
             }
+            else throw new Exception("Account closed");
         }
 
         /// <summary>
@@ -102,6 +133,9 @@ namespace BankService.AccountSystem
         /// <param name="sum"></param>
         public void WithdrawSum(int sum)
         {
+            if (sum < 0)
+                throw new ArgumentException("Sum cannot be negative");
+
             if (IsActive)
             {
                 if (Balance >= sum)
@@ -109,7 +143,7 @@ namespace BankService.AccountSystem
                     Balance -= sum;
                     Bonus = BonusLogic.Withdraw(sum, Type) < Bonus ? Bonus - BonusLogic.Withdraw(sum, Type) : 0;
                 }
-                else throw new Exception();
+                else throw new Exception("Account closed");
             }
         }
 

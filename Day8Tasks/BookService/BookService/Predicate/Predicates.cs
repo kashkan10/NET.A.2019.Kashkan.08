@@ -25,7 +25,7 @@ namespace BookService.Predicate
         /// <returns>Result of check</returns>
         public bool IsMatch(Book book)
         {
-            return book.Name == name;
+            return book.Title == name;
         }
     }
     class YearTag : IPredicate

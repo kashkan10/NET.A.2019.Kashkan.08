@@ -14,7 +14,7 @@ namespace BookService
         /// <returns>Comprasion result</returns>
         public int Compare(Book a, Book b)
         {
-            return String.Compare(a.Name, b.Name);
+            return String.Compare(a.Title, b.Title);
         }
     }
     class AuthorComparer : IComparer<Book>

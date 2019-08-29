@@ -1,18 +1,35 @@
 ﻿using System;
+using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace BookService.BookSystem
 {
     class Book : IComparable
     {
+        private string isbn;
+        private double price;
+
         /// <summary>
         /// ISBN property
         /// </summary>
-        public string ISBN { get; private set; }
+        public string ISBN
+        {
+            get
+            {
+                return isbn;
+            }
+            private set
+            {
+                if (Regex.IsMatch(value, @"\d{3}-\d{1}-\d{2}-\d{6}-\d{1}"))
+                    isbn = value;
+                else throw new FormatException("Wrong format of ISBN");
+            }
+        }
 
         /// <summary>
         /// Name property
         /// </summary>
-        public string Name { get; private set; }
+        public string Title { get; private set; }
 
         /// <summary>
         /// Author property
@@ -37,22 +54,34 @@ namespace BookService.BookSystem
         /// <summary>
         /// Price property
         /// </summary>
-        public int Price { get; private set; }
+        public double Price
+        {
+            get
+            {
+                return Math.Round(price, 2);
+            }
+            private set
+            {
+                if (value < 0)
+                    throw new Exception("Price cannot be negative");
+                price = value;
+            }
+        }
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="isbn"></param>
-        /// <param name="name"></param>
+        /// <param name="title"></param>
         /// <param name="author"></param>
         /// <param name="year"></param>
         /// <param name="publishing"></param>
         /// <param name="countOfPages"></param>
         /// <param name="price"></param>
-        public Book(string isbn, string name, string author, int year, string publishing, int countOfPages, int price)
+        public Book(string isbn, string title, string author, int year, string publishing, int countOfPages, int price)
         {
             ISBN = isbn;
-            Name = name;
+            Title = title;
             Author = author;
             Year = year;
             Publishing = publishing;
@@ -66,7 +95,7 @@ namespace BookService.BookSystem
         /// <returns>Hash code of object</returns>
         public override int GetHashCode()
         {
-            return Name.Length * Author.Length * Year;
+            return Title.Length * Author.Length * Year;
         }
 
         /// <summary>
@@ -90,15 +119,6 @@ namespace BookService.BookSystem
         }
 
         /// <summary>
-        /// Override of ToString() method
-        /// </summary>
-        /// <returns>String representation</returns>
-        public override string ToString()
-        {
-            return string.Format("{0} - {1}, {2}", Author, Name, Year);
-        }
-
-        /// <summary>
         /// IComparable implementation
         /// </summary>
         /// <param name="obj"></param>
@@ -109,7 +129,33 @@ namespace BookService.BookSystem
             if (book == null)
                 throw new Exception();
 
-            return string.Compare(book.Name, this.Name);
+            return string.Compare(book.Title, this.Title);
+        }
+
+        /// <summary>
+        /// Override of ToString() method
+        /// </summary>
+        /// <returns>String representation</returns>
+        public override string ToString()
+        {
+            return ToString("default");
+        }
+
+        /// <summary>
+        /// Different formats of string representation
+        /// </summary>
+        /// <returns>String representation</returns>
+        public string ToString(string str)
+        {
+            CultureInfo.CurrentCulture = new CultureInfo("en-US", false);
+            switch (str)
+            {
+                case "A": return string.Format($"{Author}, {Title}");
+                case "B": return string.Format($"{Author}, {Title}, {Publishing}, {Year}");
+                case "C": return string.Format($"ISBN 13: {ISBN}, {Author}, {Title}, {Publishing}, {Year}, P. {CountOfPages}");
+                case "D": return string.Format($"ISBN 13: {ISBN}, {Author}, {Title}, {Publishing}, {Year}, P. {CountOfPages}, {Price}{NumberFormatInfo.CurrentInfo.CurrencySymbol}");
+                default: return string.Format($"{Author}, {Title}, {Year}");
+            }
         }
     }
 }

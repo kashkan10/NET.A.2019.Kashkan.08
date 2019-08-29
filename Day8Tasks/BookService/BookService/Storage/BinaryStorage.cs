@@ -40,7 +40,7 @@ namespace BookService.Storage
                 {
                     writer.Write(s.ISBN);
                     writer.Write(s.Author);
-                    writer.Write(s.Name);
+                    writer.Write(s.Title);
                     writer.Write(s.Year);
                     writer.Write(s.Publishing);
                     writer.Write(s.CountOfPages);

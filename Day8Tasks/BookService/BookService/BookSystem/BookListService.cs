@@ -54,7 +54,7 @@ namespace BookService.BookSystem
         public void AddBook(Book book)
         {
             if (list.Contains(book))
-                throw new Exception();
+                throw new Exception("This book is already in list");
 
             list.Add(book);
         }
@@ -66,7 +66,7 @@ namespace BookService.BookSystem
         public void DeleteBook(Book book)
         {
             if (!list.Contains(book))
-                throw new Exception();
+                throw new Exception("Book is not found");
 
             list.Remove(book);
         }

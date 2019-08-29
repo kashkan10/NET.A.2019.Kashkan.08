@@ -8,6 +8,8 @@ namespace BookService.BookSystem
     {
         private string isbn;
         private double price;
+        private int year;
+        private int countOfPages;
 
         /// <summary>
         /// ISBN property
@@ -44,12 +46,36 @@ namespace BookService.BookSystem
         /// <summary>
         /// Year property
         /// </summary>
-        public int Year { get; private set; }
+        public int Year
+        {
+            get
+            {
+                return year;
+            }
+            private set
+            {
+                if (value < 0)
+                    throw new Exception("Year cannot be negative");
+                year = value;
+            }
+        }
 
         /// <summary>
         /// CountOfPages property
         /// </summary>
-        public int CountOfPages { get; private set; }
+        public int CountOfPages
+        {
+            get
+            {
+                return countOfPages);
+            }
+            private set
+            {
+                if (value < 0)
+                    throw new Exception("Count of pages cannot be negative");
+                countOfPages = value;
+            }
+        }
 
         /// <summary>
         /// Price property
